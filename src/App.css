@@ -2,16 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -28,11 +19,110 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: papayawhip;
+}
+
+.body-text {
+  display: flex;
+  font-family: fantasy;
+  /* font-family: "Montserrat", sans-serif; */
+  align-items: center;
+  justify-content: center;
+  margin-top: 250px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: peru;
+  /* background-image: url("map.png"); */
+  font-family: fantasy;
+
+  /* font-family: "Montserrat", sans-serif; */
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 10px;
+}
+
+nav a:hover {
+  cursor: pointer;
+}
+
+.heading {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+p {
+  font-size: 1.5em;
+  padding-top: 1.5rem;
+  font-family: fantasy;
+}
+
+article h1 {
+  font-family: fantasy;
+  margin-top: 30px;
+  font-size: 1.5em;
+}
+
+link {
+  font-size: large;
+}
+
+.edit-container {
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div div div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+div div div div{
+  width: 30px;
+  height: 30px;
+  border: 1px solid black
+}
+
+.container {
+  margin-top: 50px;
+}
+
+a:hover {
+  text-decoration: underline;
 }
