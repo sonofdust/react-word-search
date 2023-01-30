@@ -3,13 +3,16 @@ import {useRef} from "react";
 const WordInput = ({gridSize, setWordList, wordList}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    setWordList([...wordList, word.current.value]);
-    word.current.value = "";
+
+    if (word.current.value) {
+      setWordList([...wordList, word.current.value]);
+      word.current.value = "";
+    }
   };
 
   const handleChange = (e) => {
     e.preventDefault();
-    e.target.value = e.target.value.toUpperCase().replace(/[^A-z]/g, "");
+    e.target.value = e.target.value.toUpperCase().replace(/[^A-Z]/g, "");
   };
 
   const word = useRef(null);

@@ -2,10 +2,6 @@ import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const WordList = ({gridSize, wordList, deleteWord}) => {
-  // const handleDelete = (idx) => {
-  //   console.log(idx);
-  //   setWordList(...wordList.filter((_, i) => i !== idx));
-  // };
   return (
     <div>
       {gridSize < 1 || (
