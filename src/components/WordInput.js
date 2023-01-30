@@ -4,7 +4,7 @@ const WordInput = ({gridSize, setWordList, wordList}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (word.current.value) {
+    if (word.current.value && !wordList.includes(word.current.value)) {
       setWordList([...wordList, word.current.value]);
       word.current.value = "";
     }
