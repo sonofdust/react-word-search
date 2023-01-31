@@ -7,7 +7,7 @@ const PuzzleGrid = ({grid}) => {
         <div className="row" key={i}>
           {row.map((item, j) => (
             <div className="column" key={`${i}${j}`}>
-              {item}
+              {item.char}
             </div>
           ))}
         </div>

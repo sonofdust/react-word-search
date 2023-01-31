@@ -1,11 +1,14 @@
 import React from "react";
 import {useRef} from "react";
+import {getCoordinate} from "../service/service";
+
 const WordInput = ({gridSize, setWordList, wordList}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (word.current.value && !wordList.includes(word.current.value)) {
       setWordList([...wordList, word.current.value]);
+      console.log(getCoordinate(word.current.value, gridSize));
       word.current.value = "";
     }
   };

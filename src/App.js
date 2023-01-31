@@ -15,6 +15,7 @@ function App() {
   const [grid, setGrid] = useState([]);
   const [wordList, setWordList] = useState([]);
   const [gridSize, setGridSize] = useState(10);
+  const [wordObj, setWordObj] = useState({});
 
   useEffect(() => {
     setGrid(getGrid(gridSize));

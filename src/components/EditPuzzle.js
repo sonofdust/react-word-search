@@ -12,27 +12,30 @@ const EditPuzzle = ({
   deleteWord,
 }) => {
   return (
-    <section className="edit-container">
-      <div className="grid-input">
-        <GridSizeSelect
-          setGridSize={setGridSize}
-          setWordList={setWordList}
-          gridSize={gridSize}
-        />
-        <WordInput
-          gridSize={gridSize}
-          setWordList={setWordList}
-          wordList={wordList}
-        />
-        <WordList
-          gridSize={gridSize}
-          wordList={wordList}
-          deleteWord={deleteWord}
-        />
-      </div>
+    <div className="container">
+      <section className="edit-container">
+        <div className="grid-input">
+          <GridSizeSelect
+            setGridSize={setGridSize}
+            setWordList={setWordList}
+            gridSize={gridSize}
+            grid={grid}
+          />
+          <WordInput
+            gridSize={gridSize}
+            setWordList={setWordList}
+            wordList={wordList}
+          />
+          <WordList
+            gridSize={gridSize}
+            wordList={wordList}
+            deleteWord={deleteWord}
+          />
+        </div>
 
-      <PuzzleGrid grid={grid} />
-    </section>
+        <PuzzleGrid grid={grid} />
+      </section>
+    </div>
   );
 };
 
