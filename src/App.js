@@ -8,38 +8,33 @@ import {faTrash} from "@fortawesome/free-solid-svg-icons";
 import {LetterGrid} from "./service/service";
 library.add(faTrash);
 
-function App() {
-  const gridObj = Object.fromEntries(
-    [10, 15, 20, 25].map((e) => [e, new LetterGrid(e)])
-  );
+const gridObj = Object.fromEntries(
+  [10, 15, 20, 25].map((e) => [e, new LetterGrid(e)])
+);
 
+function App() {
   const [grid, setGrid] = useState([]);
   const [wordList, setWordList] = useState([]);
   const [gridSize, setGridSize] = useState(10);
 
   useEffect(() => {
     setGrid(gridObj[gridSize].getGrid());
+
+    setWordList(gridObj[gridSize].getWordList());
   }, [gridSize]);
 
   const addToWordList = (word) => {
     try {
-      // gridObj[gridSize].setCoordinate(word);
-      // setGrid(gridObj[gridSize].grid);
-      // setWordList([...wordList, word]);
-      gridObj.setCoordinate(word);
-      setGrid(gridObj.grid);
+      gridObj[gridSize].setCoordinate(word);
+      setGrid(gridObj[gridSize].getGrid());
       setWordList([...wordList, word]);
     } catch (e) {
       alert(e.message);
     }
   };
 
-  // const deleteFromList = (word) => {
-  //   setWordList([...wordList, word]);
-  // };
-
   const updateGrid = (grid) => {
-    setGrid(gridObj.grid);
+    setGrid(gridObj[gridSize].getGrid());
   };
 
   return (
