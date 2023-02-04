@@ -1,6 +1,6 @@
 import React from "react";
-import {setLicalStorage} from "../service/service";
-import {getLicalStorage} from "../service/service";
+// import {setLicalStorage} from "../service/service";
+// import {getLicalStorage} from "../service/service";
 
 const GridSizeSelect = ({setGridSize, gridSize, grid}) => {
   const handleChange = (e) => {

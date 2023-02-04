@@ -5,32 +5,28 @@ import WordInput from "./WordInput";
 import WordList from "./WordList";
 const EditPuzzle = ({
   grid,
+  updateGrid,
   setGridSize,
   gridSize,
+  addToWordList,
   wordList,
-  setWordList,
-  deleteWord,
 }) => {
+  //  console.log("MY LITTLE GRID.", gridObj[gridSize]);
   return (
     <div className="container">
       <section className="edit-container">
         <div className="grid-input">
           <GridSizeSelect
             setGridSize={setGridSize}
-            setWordList={setWordList}
+            addToWordList={addToWordList}
             gridSize={gridSize}
-            grid={grid}
           />
           <WordInput
             gridSize={gridSize}
-            setWordList={setWordList}
-            wordList={wordList}
+            addToWordList={addToWordList}
+            updateGrid={updateGrid}
           />
-          <WordList
-            gridSize={gridSize}
-            wordList={wordList}
-            deleteWord={deleteWord}
-          />
+          <WordList gridSize={gridSize} wordList={wordList} />
         </div>
 
         <PuzzleGrid grid={grid} />
