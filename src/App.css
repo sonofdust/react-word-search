@@ -111,6 +111,7 @@ link {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: white;
 }
 
 .grid-container .row {
@@ -126,7 +127,9 @@ link {
   justify-content: center;
   height: 25px;
   width: 25px;
-  border: 1px solid black
+  border: 1px solid black;
+  transition-delay: 0.25s;
+    transition-timing-function: ease-in-out;
 }
 .container {
   margin-top: 50px;
@@ -153,4 +156,14 @@ li span {
 
 ul {
   list-style-type: none;
+}
+
+.selected {
+  transition-delay: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.grid-container:hover>.row>.selected {
+    font-weight: bold;
+    color:magenta
 }

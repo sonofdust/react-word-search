@@ -1,7 +1,7 @@
 import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-const WordList = ({gridSize, wordList}) => {
+const WordList = ({gridSize, wordList, removeFromWordList}) => {
   const deleteWord = (word) => {
     // console.log("GRID", gridObj[gridSize]);
     // console.log(word);
@@ -16,7 +16,7 @@ const WordList = ({gridSize, wordList}) => {
                 icon="fa-trash"
                 size="sm"
                 className="delete"
-                onClick={() => deleteWord(e)}
+                onClick={() => removeFromWordList(e)}
               />
               <span>{e}</span>
             </li>

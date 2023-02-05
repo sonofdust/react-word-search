@@ -27,14 +27,16 @@ function App() {
     try {
       gridObj[gridSize].setCoordinate(word);
       setGrid(gridObj[gridSize].getGrid());
-      setWordList([...wordList, word]);
+      setWordList(gridObj[gridSize].getWordList());
     } catch (e) {
-      alert(e.message);
+      console.log(e.message);
     }
   };
 
-  const updateGrid = (grid) => {
+  const removeFromWordList = (word) => {
+    gridObj[gridSize].deleteCoordinate(word);
     setGrid(gridObj[gridSize].getGrid());
+    setWordList(gridObj[gridSize].getWordList());
   };
 
   return (
@@ -61,7 +63,8 @@ function App() {
           path="/"
           element={
             <EditPuzzle
-              updateGrid={updateGrid}
+              sizeKeys={Object.keys(gridObj)}
+              removeFromWordList={removeFromWordList}
               grid={grid}
               gridSize={gridSize}
               setGridSize={setGridSize}

@@ -4,7 +4,6 @@ export const setLocalStorage = (key, obj) => {
 
 export const getLocalStorage = (key) => {
   if (!localStorage.getItem(key)) {
-    // setLocalStorage(key, JSON.stringify(new CLetterGrid(key)));
     localStorage.setItem(key, JSON.stringify(new LetterGrid(key)));
   }
   return JSON.parse(localStorage.getItem(key));
@@ -68,7 +67,6 @@ export class LetterGrid {
         }
         return obj;
       };
-
       for (let i = 0; i < 1000; i++) {
         const vector = ["LH", "RH", "LUD", "LDD", "UV", "DV", "RUD", "RDD"];
         const result = {
@@ -121,15 +119,14 @@ export class LetterGrid {
     };
 
     this.deleteCoordinate = (word) => {
-      getCoordinate(word).points.forEach((item) => {
-        item.selected = false;
-        item.char = getLetter();
-        grid[item.y][item.x] = item;
-      });
-      coordinates = [coordinates.filter((e) => e.word != word)];
+      try {
+        getCoordinate(word).points.forEach((item) => {
+          item.selected = false;
+          item.char = getLetter();
+          grid[item.y][item.x] = item;
+        });
+        coordinates = [...coordinates.filter((e) => e.word != word)];
+      } catch (e) {}
     };
   }
 }
-
-// export const Grids = () =>
-//   Object.fromEntries([10, 15, 20, 25].map((e) => [e, new LetterGrid(e)]));

@@ -6,7 +6,10 @@ const PuzzleGrid = ({grid}) => {
       {grid.map((row, i) => (
         <div className="row" key={i}>
           {row.map((item, j) => (
-            <div className="column" key={`${i}${j}`}>
+            <div
+              className={item.selected ? `column selected` : `column`}
+              key={`${i}${j}`}
+            >
               {item.char}
             </div>
           ))}

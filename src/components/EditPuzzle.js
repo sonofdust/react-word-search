@@ -5,7 +5,8 @@ import WordInput from "./WordInput";
 import WordList from "./WordList";
 const EditPuzzle = ({
   grid,
-  updateGrid,
+  sizeKeys,
+  removeFromWordList,
   setGridSize,
   gridSize,
   addToWordList,
@@ -17,6 +18,7 @@ const EditPuzzle = ({
       <section className="edit-container">
         <div className="grid-input">
           <GridSizeSelect
+            sizeKeys={sizeKeys}
             setGridSize={setGridSize}
             addToWordList={addToWordList}
             gridSize={gridSize}
@@ -24,9 +26,13 @@ const EditPuzzle = ({
           <WordInput
             gridSize={gridSize}
             addToWordList={addToWordList}
-            updateGrid={updateGrid}
+            wordList={wordList}
           />
-          <WordList gridSize={gridSize} wordList={wordList} />
+          <WordList
+            gridSize={gridSize}
+            wordList={wordList}
+            removeFromWordList={removeFromWordList}
+          />
         </div>
 
         <PuzzleGrid grid={grid} />
