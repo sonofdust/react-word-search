@@ -27,7 +27,7 @@
 }
 
 body {
-  background-color: papayawhip;
+  background-color: black;
 }
 
 .body-text {
@@ -44,7 +44,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 4vh;
-  background-color: peru;
+  background-color: purple;
   /* background-image: url("map.png"); */
   font-family: fantasy;
 
@@ -127,9 +127,12 @@ link {
   justify-content: center;
   height: 25px;
   width: 25px;
-  border: 1px solid black;
-  transition-delay: 0.25s;
-    transition-timing-function: ease-in-out;
+  border: 1px solid orange;
+  color: orange;
+  background-color: black;
+  
+  transition-delay: 1s ease;
+
 }
 .container {
   margin-top: 50px;
@@ -158,12 +161,30 @@ ul {
   list-style-type: none;
 }
 
-.selected {
+/* .selected {
   transition-delay: 0.25s;
   transition-timing-function: ease-in-out;
-}
+} */
 
 .grid-container:hover>.row>.selected {
+    transition: color 0.5s ease-in-out;
     font-weight: bold;
-    color:magenta
+    color:lime
 }
+
+/* .grid-container:hover>.row>.selected {
+    transition: color 1s ease;
+}
+
+.grid-container:hover>.row>.selected:hover {
+  color: lime;
+} */
+
+ul li {
+  color: orange
+}
+
+article p {color:orange}
+div>label{color:orange}
+
+select {background-color: black; color:orange}

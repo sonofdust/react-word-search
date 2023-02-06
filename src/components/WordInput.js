@@ -3,7 +3,6 @@ import {useRef} from "react";
 const WordInput = ({gridSize, addToWordList, wordList}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (!!wordList.length && wordList.includes(word.current.value))
     addToWordList(word.current.value);
     word.current.value = "";
   };

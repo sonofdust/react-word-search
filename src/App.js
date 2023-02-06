@@ -25,10 +25,14 @@ function App() {
 
   const addToWordList = (word) => {
     try {
-      gridObj[gridSize].setCoordinate(word);
-      setGrid(gridObj[gridSize].getGrid());
-      setWordList(gridObj[gridSize].getWordList());
+      console.log(gridObj[gridSize].getWordList().length);
+      if (!gridObj[gridSize].getWordList().includes(word)) {
+        gridObj[gridSize].setCoordinate(word);
+        setGrid(gridObj[gridSize].getGrid());
+        setWordList(gridObj[gridSize].getWordList());
+      }
     } catch (e) {
+      alert(`${word} has exceeded the grid capicity.`);
       console.log(e.message);
     }
   };
