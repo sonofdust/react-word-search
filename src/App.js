@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 library.add(faTrash);
 
 const gridObj = Object.fromEntries(
-  [10, 15, 20, 25].map((e) => [e, new LetterGrid(e)])
+  [10, 15, 20, 25, 30].map((e) => [e, new LetterGrid(e)])
 );
 
 function App() {
@@ -26,15 +26,18 @@ function App() {
     setWordList(gridObj[gridSize].getWordList());
   }, [gridSize]);
 
-  const addToWordList = (word) => {
+  const addToWordList = (list) => {
+    console.log(list);
     try {
-      if (!gridObj[gridSize].getWordList().includes(word)) {
-        gridObj[gridSize].setCoordinate(word);
-        setGrid(gridObj[gridSize].getGrid());
-        setWordList(gridObj[gridSize].getWordList());
-      }
+      list.forEach((word) => {
+        if (!gridObj[gridSize].getWordList().includes(word)) {
+          gridObj[gridSize].setCoordinate(word);
+          setGrid(gridObj[gridSize].getGrid());
+          setWordList(gridObj[gridSize].getWordList());
+        }
+      });
     } catch (e) {
-      alert(`${word} has exceeded the grid capicity.`);
+      alert(`word capicity has been exceeded the grid capicity.`);
     }
   };
 

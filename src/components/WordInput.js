@@ -3,13 +3,22 @@ import {useRef} from "react";
 const WordInput = ({gridSize, addToWordList, wordList}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    addToWordList(word.current.value);
+    if (!!word.current.value.replace(/^\s+/g, "")) {
+      const list = word.current.value
+        .toUpperCase()
+        .replace(/[^A-Z \s]/g, "")
+        .replace(/\s+$/g, "")
+        .replace(/^\s+/g, "")
+        .replace(/\s+/g, "\n")
+        .split(/\s+/g);
+      addToWordList(list);
+    }
     word.current.value = "";
   };
 
   const handleChange = (e) => {
     e.preventDefault();
-    e.target.value = e.target.value.toUpperCase().replace(/[^A-Z]/g, "");
+    e.target.value = e.target.value.toUpperCase().replace(/[^A-Z \b]/g, "");
   };
 
   const word = useRef(null);
@@ -20,8 +29,7 @@ const WordInput = ({gridSize, addToWordList, wordList}) => {
           <input
             ref={word}
             type="text"
-            placeholder="Enter word press Enter"
-            maxLength={15}
+            placeholder="Enter word(s) with press Enter"
             onChange={handleChange}
           />
         </form>
