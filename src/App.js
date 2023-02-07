@@ -2,10 +2,12 @@ import "./App.css";
 import {Route, Routes, Link} from "react-router-dom";
 import EditPuzzle from "./components/EditPuzzle";
 import About from "./components/About";
-import {useEffect, useState} from "react";
+import {useEffect, useState, useContext} from "react";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTrash} from "@fortawesome/free-solid-svg-icons";
 import {LetterGrid} from "./service/service";
+import ViewPuzzle from "./components/ViewPuzzle";
+import Footer from "./components/Footer";
 library.add(faTrash);
 
 const gridObj = Object.fromEntries(
@@ -16,6 +18,7 @@ function App() {
   const [grid, setGrid] = useState([]);
   const [wordList, setWordList] = useState([]);
   const [gridSize, setGridSize] = useState(10);
+  const [title, setTutke] = useState("");
 
   useEffect(() => {
     setGrid(gridObj[gridSize].getGrid());
@@ -25,7 +28,6 @@ function App() {
 
   const addToWordList = (word) => {
     try {
-      console.log(gridObj[gridSize].getWordList().length);
       if (!gridObj[gridSize].getWordList().includes(word)) {
         gridObj[gridSize].setCoordinate(word);
         setGrid(gridObj[gridSize].getGrid());
@@ -33,7 +35,6 @@ function App() {
       }
     } catch (e) {
       alert(`${word} has exceeded the grid capicity.`);
-      console.log(e.message);
     }
   };
 
@@ -53,6 +54,11 @@ function App() {
           <li>
             <Link to="/" style={{fontSize: "20px"}}>
               Edit
+            </Link>
+          </li>
+          <li>
+            <Link to="/view" style={{fontSize: "20px"}}>
+              View/Print
             </Link>
           </li>
           <li>
@@ -77,8 +83,15 @@ function App() {
             />
           }
         />
+        <Route
+          path="/View"
+          element={
+            <ViewPuzzle grid={grid} gridSize={gridSize} wordList={wordList} />
+          }
+        />
         <Route path="/About" element={<About />} />
       </Routes>
+      <Footer />
     </>
   );
 }

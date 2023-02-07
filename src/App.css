@@ -61,7 +61,7 @@ nav a {
   text-decoration: none;
   color: #fff;
   display: block;
-  padding: 10px;
+  padding: 5px;
 }
 
 nav a:hover {
@@ -167,11 +167,25 @@ ul {
 } */
 
 .grid-container:hover>.row>.selected {
-    transition: color 0.5s ease-in-out;
-    font-weight: bold;
+    transition: color 0.25s ease-in-out;
+    /* font-weight: bold; */
     color:lime
 }
-
+/* 
+ ul>li>span:hover {
+    transition: color 0.25s ease-in-out;
+       color: lime; 
+     font-weight: bold; 
+     }
+ */
+/* ol>li>span:hover {
+  transition: color 0.25s ease-in-out;
+  font-weight: bold;
+} */
+ol  {
+     list-style: decimal;
+     color:orange
+   }
 /* .grid-container:hover>.row>.selected {
     transition: color 1s ease;
 }
@@ -188,3 +202,30 @@ article p {color:orange}
 div>label{color:orange}
 
 select {background-color: black; color:orange}
+/* .wor */
+label:hover>  .row>.selected {
+  transition: color 0.25s ease-in-out;
+  /* font-weight: bold; */
+  color: lime
+}
+
+
+span {color:orange}
+
+
+.footer {
+  width: 100%;
+  min-height: 3vh;
+  background-color: purple;
+  color:white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+    bottom: 0;
+}
+
+.footer p {
+  font-size: medium;
+  padding: 5px;
+}
