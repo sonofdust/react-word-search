@@ -229,3 +229,44 @@ span {color:orange}
   font-size: medium;
   padding: 5px;
 }
+
+.grid-container h1 {
+  color:orange;
+  background-color: black;
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+/*----------------------- TOOL TIP -------------------------  */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted lime;
+  padding-bottom: 3px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: white;
+  color: black;
+  border-radius: 6px;
+  padding: 5px 5px;
+
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width: 250px;
+}
+
+button:hover {cursor: pointer;}
+a {color: white;
+  font-family: fantasy; 
+  font-size: 18px;
+  padding-left: 25px;}
+
+.view-list {padding-top: 40px;}

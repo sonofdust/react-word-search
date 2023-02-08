@@ -18,7 +18,7 @@ function App() {
   const [grid, setGrid] = useState([]);
   const [wordList, setWordList] = useState([]);
   const [gridSize, setGridSize] = useState(10);
-  const [title, setTutke] = useState("");
+  const [title, setTitle] = useState("Puzzel");
 
   useEffect(() => {
     setGrid(gridObj[gridSize].getGrid());
@@ -27,7 +27,6 @@ function App() {
   }, [gridSize]);
 
   const addToWordList = (list) => {
-    console.log(list);
     try {
       list.forEach((word) => {
         if (!gridObj[gridSize].getWordList().includes(word)) {
@@ -39,6 +38,16 @@ function App() {
     } catch (e) {
       alert(`word capicity has been exceeded the grid capicity.`);
     }
+  };
+
+  const removeAll = () => {
+    gridObj[gridSize].getWordList().forEach((word) => {
+      removeFromWordList(word);
+    });
+  };
+
+  const editTitle = (str) => {
+    setTitle(str);
   };
 
   const removeFromWordList = (word) => {
@@ -76,6 +85,9 @@ function App() {
           path="/"
           element={
             <EditPuzzle
+              title={title}
+              editTitle={editTitle}
+              removeAll={removeAll}
               sizeKeys={Object.keys(gridObj)}
               removeFromWordList={removeFromWordList}
               grid={grid}
@@ -89,7 +101,12 @@ function App() {
         <Route
           path="/View"
           element={
-            <ViewPuzzle grid={grid} gridSize={gridSize} wordList={wordList} />
+            <ViewPuzzle
+              grid={grid}
+              gridSize={gridSize}
+              wordList={wordList}
+              title={title}
+            />
           }
         />
         <Route path="/About" element={<About />} />

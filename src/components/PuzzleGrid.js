@@ -1,8 +1,9 @@
 import React from "react";
 
-const PuzzleGrid = ({grid}) => {
+const PuzzleGrid = ({grid, title}) => {
   return (
     <div className="grid-container">
+      <h1>{title}</h1>
       {grid.map((row, i) => (
         <div className="row" key={i}>
           {row.map((item, j) => (

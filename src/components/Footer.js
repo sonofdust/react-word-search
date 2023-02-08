@@ -4,7 +4,12 @@ const Footer = () => {
   const today = new Date();
   return (
     <footer className="footer">
-      <p>LinkedIn: https://www.linkedin.com/in/nicholas-roman-1847b81/ </p>
+      <a
+        href="https://www.linkedin.com/in/nicholas-roman-1847b81/"
+        target="_blank"
+      >
+        Visit developers profile.
+      </a>
 
       <p>Copyright &copy; {today.getFullYear()}</p>
     </footer>

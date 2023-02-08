@@ -3,6 +3,7 @@ import {useRef} from "react";
 const WordInput = ({gridSize, addToWordList, wordList}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!!word.current.value.replace(/^\s+/g, "")) {
       const list = word.current.value
         .toUpperCase()
@@ -26,12 +27,19 @@ const WordInput = ({gridSize, addToWordList, wordList}) => {
     <>
       {gridSize < 1 || (
         <form onSubmit={handleSubmit}>
-          <input
-            ref={word}
-            type="text"
-            placeholder="Enter word(s) with press Enter"
-            onChange={handleChange}
-          />
+          <div className="tooltip">
+            <input
+              className="tooltip"
+              ref={word}
+              type="text"
+              placeholder="Enter word press Enter"
+              onChange={handleChange}
+            />
+
+            <span className="tooltiptext">
+              Enter a single word or multiple words separated by spaces.
+            </span>
+          </div>
         </form>
       )}
     </>

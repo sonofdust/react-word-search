@@ -9,12 +9,15 @@ const GridSizeSelect = ({setGridSize, gridSize, sizeKeys}) => {
   };
   return (
     <div>
-      <label>Grid size: {gridSize} x </label>
-      <select name="grid-size" id="grid-size" onChange={handleChange}>
+      <label>Grid size: </label>
+      <select
+        name="grid-size"
+        id="grid-size"
+        onChange={handleChange}
+        value={gridSize}
+      >
         {sizeKeys.map((e) => (
-          <option key={e} value={e}>
-            {e}
-          </option>
+          <option key={e} value={e}>{`${e} X ${e}`}</option>
         ))}
       </select>
     </div>

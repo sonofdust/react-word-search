@@ -2,7 +2,7 @@ import React from "react";
 
 const WordView = ({gridSize, wordList}) => {
   return (
-    <div>
+    <div className="view-list">
       {gridSize < 1 || (
         <ol>
           {wordList.map((e, i) => (

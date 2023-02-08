@@ -3,7 +3,11 @@ import PuzzleGrid from "./PuzzleGrid";
 import GridSizeSelect from "./GridSizeSelect";
 import WordInput from "./WordInput";
 import WordList from "./WordList";
+import TitleInput from "./TitleInput";
 const EditPuzzle = ({
+  title,
+  editTitle,
+  removeAll,
   grid,
   sizeKeys,
   removeFromWordList,
@@ -17,6 +21,7 @@ const EditPuzzle = ({
     <div className="container">
       <section className="edit-container">
         <div className="grid-input">
+          <TitleInput gridSize={gridSize} editTitle={editTitle} />
           <GridSizeSelect
             sizeKeys={sizeKeys}
             setGridSize={setGridSize}
@@ -28,6 +33,9 @@ const EditPuzzle = ({
             addToWordList={addToWordList}
             wordList={wordList}
           />
+          {!!wordList.length ? (
+            <button onClick={removeAll}>Delete All</button>
+          ) : null}
           <WordList
             gridSize={gridSize}
             wordList={wordList}
@@ -35,7 +43,7 @@ const EditPuzzle = ({
           />
         </div>
 
-        <PuzzleGrid grid={grid} />
+        <PuzzleGrid grid={grid} title={title} />
       </section>
     </div>
   );
