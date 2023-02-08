@@ -19,7 +19,7 @@ export class LetterGrid {
       title = newTitle;
     };
 
-    this.getTitle = (newTitle) => {
+    this.getTitle = () => {
       return title;
     };
 
