@@ -13,6 +13,16 @@ export class LetterGrid {
   constructor(size = 10) {
     let coordinates = [];
 
+    let title = "Puzzel";
+
+    this.setTitle = (newTitle) => {
+      title = newTitle;
+    };
+
+    this.getTitle = (newTitle) => {
+      return title;
+    };
+
     const getLetter = () =>
       String.fromCharCode(Math.floor(Math.random() * 26) + "A".charCodeAt(0));
 

@@ -18,12 +18,14 @@ function App() {
   const [grid, setGrid] = useState([]);
   const [wordList, setWordList] = useState([]);
   const [gridSize, setGridSize] = useState(10);
-  const [title, setTitle] = useState("Puzzel");
+  const [title, setTitle] = useState("");
+
+  const setLocal = () => {};
 
   useEffect(() => {
     setGrid(gridObj[gridSize].getGrid());
     setWordList(gridObj[gridSize].getWordList());
-    editTitle(gridObj[gridSize].title);
+    editTitle(gridObj[gridSize].getTitle());
   }, [gridSize]);
 
   const addToWordList = (list) => {
@@ -47,8 +49,8 @@ function App() {
   };
 
   const editTitle = (str) => {
-    gridObj[gridSize].title = str;
-    setTitle(gridObj[gridSize].title);
+    gridObj[gridSize].setTitle(str);
+    setTitle(gridObj[gridSize].getTitle());
   };
 
   const removeFromWordList = (word) => {
