@@ -16,7 +16,6 @@ const EditPuzzle = ({
   addToWordList,
   wordList,
 }) => {
-  //  console.log("MY LITTLE GRID.", gridObj[gridSize]);
   return (
     <div className="container">
       <section className="edit-container">

@@ -5,11 +5,6 @@ const About = () => {
     <div>
       <article>
         <h1>About</h1>
-        {/* <p>Welcome to our word search puzzle creator!</p>
-        <p>With our application,</p>
-        <p>Our application also</p>
-        <p>We are constantly</p> */}
-
         <p>
           Welcome to our word search puzzle creator! We are excited to offer you
           a fun and interactive way to generate custom word search puzzles. Our

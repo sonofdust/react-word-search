@@ -20,8 +20,6 @@ function App() {
   const [gridSize, setGridSize] = useState(10);
   const [title, setTitle] = useState("");
 
-  const setLocal = () => {};
-
   useEffect(() => {
     setGrid(gridObj[gridSize].getGrid());
     setWordList(gridObj[gridSize].getWordList());
