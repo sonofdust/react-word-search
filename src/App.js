@@ -22,8 +22,8 @@ function App() {
 
   useEffect(() => {
     setGrid(gridObj[gridSize].getGrid());
-
     setWordList(gridObj[gridSize].getWordList());
+    editTitle(gridObj[gridSize].title);
   }, [gridSize]);
 
   const addToWordList = (list) => {
@@ -47,7 +47,8 @@ function App() {
   };
 
   const editTitle = (str) => {
-    setTitle(str);
+    gridObj[gridSize].title = str;
+    setTitle(gridObj[gridSize].title);
   };
 
   const removeFromWordList = (word) => {

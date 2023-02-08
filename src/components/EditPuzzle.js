@@ -21,13 +21,13 @@ const EditPuzzle = ({
     <div className="container">
       <section className="edit-container">
         <div className="grid-input">
-          <TitleInput gridSize={gridSize} editTitle={editTitle} />
           <GridSizeSelect
             sizeKeys={sizeKeys}
             setGridSize={setGridSize}
             addToWordList={addToWordList}
             gridSize={gridSize}
           />
+          <TitleInput gridSize={gridSize} editTitle={editTitle} />
           <WordInput
             gridSize={gridSize}
             addToWordList={addToWordList}

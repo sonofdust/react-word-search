@@ -1,24 +1,28 @@
 import {useRef} from "react";
 
-const WordInput = ({gridSize, editTitle}) => {
-  const handleChange = (e) => {
+const TitleInput = ({gridSize, editTitle}) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    editTitle(e.target.value);
+    editTitle(title.current.value);
+    title.current.value = "";
   };
 
-  const word = useRef(null);
+  const title = useRef(null);
   return (
     <>
       {gridSize < 1 || (
-        <input
-          className="tooltip"
-          type="text"
-          placeholder="Enter puzzel title"
-          onChange={handleChange}
-        />
+        <form onSubmit={handleSubmit}>
+          <div>
+            <input
+              ref={title}
+              type="text"
+              placeholder="Enter title press Enter"
+            />
+          </div>
+        </form>
       )}
     </>
   );
 };
 
-export default WordInput;
+export default TitleInput;
