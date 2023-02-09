@@ -15,6 +15,11 @@ export class LetterGrid {
 
     let title = "Puzzel";
 
+    const saveToLocal = () => {
+      const obj = {title, coordinates, grid};
+      localStorage.setItem(size, JSON.stringify(obj));
+    };
+
     this.setTitle = (newTitle) => {
       title = newTitle;
     };
@@ -26,11 +31,11 @@ export class LetterGrid {
     const getLetter = () =>
       String.fromCharCode(Math.floor(Math.random() * 26) + "A".charCodeAt(0));
 
-    const getCoordinate = (word) => coordinates.find((e) => e.word == word);
+    const getCoordinate = (word) => coordinates.find((e) => e.word === word);
 
     this.getWordList = () => coordinates.map((e) => e.word);
 
-    const grid = Array.from(
+    let grid = Array.from(
       {
         length: size,
       },
@@ -42,6 +47,7 @@ export class LetterGrid {
           x,
         }))
     );
+
     this.getGrid = () => grid;
 
     this.setCoordinate = (word) => {
@@ -53,7 +59,7 @@ export class LetterGrid {
             const cross = a
               .map((e) => grid[e.y][e.x])
               .filter((e) => e.selected);
-            return cross.every((e) => e.char != grid[e.y][e.x].char);
+            return cross.every((e) => e.char !== grid[e.y][e.x].char);
           }
           return false;
         };
@@ -123,9 +129,10 @@ export class LetterGrid {
           break;
         }
       }
-      if (!coordinates.find((e) => e.word == word).points) {
+      if (!coordinates.find((e) => e.word === word).points) {
         throw {error: `Unable to add ${word}`};
       }
+      saveToLocal();
     };
 
     this.deleteCoordinate = (word) => {
@@ -135,8 +142,20 @@ export class LetterGrid {
           item.char = getLetter();
           grid[item.y][item.x] = item;
         });
-        coordinates = [...coordinates.filter((e) => e.word != word)];
+        coordinates = [...coordinates.filter((e) => e.word !== word)];
+        saveToLocal();
       } catch (e) {}
     };
+
+    if (localStorage.getItem(size) !== null) {
+      try {
+        const obj = JSON.parse(localStorage.getItem(size));
+        coordinates = obj.coordinates;
+        title = obj.title;
+        grid = obj.grid;
+      } catch (e) {
+        console.log(e.message);
+      }
+    }
   }
 }

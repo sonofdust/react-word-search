@@ -37,7 +37,8 @@ const WordInput = ({gridSize, addToWordList, wordList}) => {
             />
 
             <span className="tooltiptext">
-              Enter a single word or multiple words separated by spaces.
+              Enter a single word or multiple words separated by spaces. Hit
+              Enter.
             </span>
           </div>
         </form>

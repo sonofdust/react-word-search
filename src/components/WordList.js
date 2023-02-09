@@ -5,7 +5,7 @@ const WordList = ({gridSize, wordList, removeFromWordList}) => {
   return (
     <div>
       {gridSize < 1 || (
-        <ul>
+        <ol>
           {wordList.map((e, i) => (
             <li key={i}>
               <FontAwesomeIcon
@@ -17,7 +17,7 @@ const WordList = ({gridSize, wordList, removeFromWordList}) => {
               <span>{e}</span>
             </li>
           ))}
-        </ul>
+        </ol>
       )}
     </div>
   );
