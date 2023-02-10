@@ -111,6 +111,23 @@ function App() {
           }
         />
         <Route path="/About" element={<About />} />
+        <Route
+          path="*"
+          element={
+            <EditPuzzle
+              title={title}
+              editTitle={editTitle}
+              removeAll={removeAll}
+              sizeKeys={Object.keys(gridObj)}
+              removeFromWordList={removeFromWordList}
+              grid={grid}
+              gridSize={gridSize}
+              setGridSize={setGridSize}
+              wordList={wordList}
+              addToWordList={addToWordList}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </>
