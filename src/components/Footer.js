@@ -8,7 +8,7 @@ const Footer = () => {
         href="https://www.linkedin.com/in/nicholas-roman-1847b81/"
         target="_blank"
       >
-        Visit developers profile.
+        Developers Profile.
       </a>
 
       <p>Copyright &copy; {today.getFullYear()}</p>
