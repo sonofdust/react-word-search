@@ -1,4 +1,9 @@
-const TitleInput = ({gridSize, editTitle, title}) => {
+import DataContext from "../context/DataContext";
+import {useContext} from "react";
+
+const TitleInput = () => {
+  const {editTitle, gridSize} = useContext(DataContext);
+
   const handleChange = (e) => {
     e.preventDefault();
     editTitle(e.target.value);

@@ -1,6 +1,9 @@
 import React from "react";
+import DataContext from "../context/DataContext";
+import {useContext} from "react";
 
-const WordView = ({gridSize, wordList}) => {
+const WordView = () => {
+  const {gridSize, wordList} = useContext(DataContext);
   return (
     <div className="view-list">
       {gridSize < 1 || (

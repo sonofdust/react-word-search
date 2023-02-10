@@ -4,45 +4,25 @@ import GridSizeSelect from "./GridSizeSelect";
 import WordInput from "./WordInput";
 import WordList from "./WordList";
 import TitleInput from "./TitleInput";
-const EditPuzzle = ({
-  title,
-  editTitle,
-  removeAll,
-  grid,
-  sizeKeys,
-  removeFromWordList,
-  setGridSize,
-  gridSize,
-  addToWordList,
-  wordList,
-}) => {
+import DataContext from "../context/DataContext";
+import {useContext} from "react";
+
+const EditPuzzle = () => {
+  const {title, removeAll, grid, wordList} = useContext(DataContext);
   return (
     <div className="container">
       <section className="edit-container">
         <div className="grid-input">
-          <GridSizeSelect
-            sizeKeys={sizeKeys}
-            setGridSize={setGridSize}
-            addToWordList={addToWordList}
-            gridSize={gridSize}
-          />
-          <TitleInput gridSize={gridSize} editTitle={editTitle} title={title} />
-          <WordInput
-            gridSize={gridSize}
-            addToWordList={addToWordList}
-            wordList={wordList}
-          />
+          <GridSizeSelect />
+          <TitleInput />
+          <WordInput />
           {!!wordList.length ? (
             <button onClick={removeAll}>Delete All</button>
           ) : null}
-          <WordList
-            gridSize={gridSize}
-            wordList={wordList}
-            removeFromWordList={removeFromWordList}
-          />
+          <WordList />
         </div>
 
-        <PuzzleGrid grid={grid} title={title} />
+        <PuzzleGrid />
       </section>
     </div>
   );

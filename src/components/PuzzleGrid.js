@@ -1,6 +1,10 @@
 import React from "react";
+import DataContext from "../context/DataContext";
+import {useContext} from "react";
 
-const PuzzleGrid = ({grid, title}) => {
+const PuzzleGrid = () => {
+  const {title, grid} = useContext(DataContext);
+
   return (
     <div className="grid-container">
       <h1>{title}</h1>

@@ -1,7 +1,11 @@
 import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import DataContext from "../context/DataContext";
+import {useContext} from "react";
 
-const WordList = ({gridSize, wordList, removeFromWordList}) => {
+const WordList = () => {
+  const {removeFromWordList, gridSize, wordList} = useContext(DataContext);
+
   return (
     <div>
       {gridSize < 1 || (

@@ -1,6 +1,10 @@
 import {useRef} from "react";
+import DataContext from "../context/DataContext";
+import {useContext} from "react";
 
-const WordInput = ({gridSize, addToWordList, wordList}) => {
+const WordInput = () => {
+  const {gridSize, addToWordList} = useContext(DataContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 

@@ -1,8 +1,10 @@
 import React from "react";
-// import {setLicalStorage} from "../service/service";
-// import {getLicalStorage} from "../service/service";
+import DataContext from "../context/DataContext";
+import {useContext} from "react";
 
-const GridSizeSelect = ({setGridSize, gridSize, sizeKeys}) => {
+const GridSizeSelect = () => {
+  const {sizeKeys, setGridSize, gridSize} = useContext(DataContext);
+
   const handleChange = (e) => {
     e.preventDefault();
     setGridSize(e.target.value);
