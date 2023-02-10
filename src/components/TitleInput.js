@@ -15,7 +15,7 @@ const TitleInput = () => {
         <div>
           <input
             type="text"
-            placeholder="Enter titler"
+            placeholder="Enter title hit <tab>"
             onChange={handleChange}
           />
         </div>

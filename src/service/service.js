@@ -24,7 +24,6 @@ export class LetterGrid {
       title = newTitle;
       saveToLocal();
     };
-
     this.getTitle = () => {
       return title;
     };
