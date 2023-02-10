@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     setGrid(gridObj[gridSize].getGrid());
     setWordList(gridObj[gridSize].getWordList());
-    editTitle(gridObj[gridSize].getTitle());
+    setTitle(gridObj[gridSize].getTitle());
   }, [gridSize]);
 
   const addToWordList = (list) => {

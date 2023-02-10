@@ -26,7 +26,7 @@ const EditPuzzle = ({
             addToWordList={addToWordList}
             gridSize={gridSize}
           />
-          <TitleInput gridSize={gridSize} editTitle={editTitle} />
+          <TitleInput gridSize={gridSize} editTitle={editTitle} title={title} />
           <WordInput
             gridSize={gridSize}
             addToWordList={addToWordList}
