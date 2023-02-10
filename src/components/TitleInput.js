@@ -1,25 +1,19 @@
-import {useRef} from "react";
-
-const TitleInput = ({gridSize, editTitle}) => {
-  const handleSubmit = (e) => {
+const TitleInput = ({gridSize, editTitle, title}) => {
+  const handleChange = (e) => {
     e.preventDefault();
-    editTitle(title.current.value);
-    title.current.value = "";
+    editTitle(e.target.value);
   };
 
-  const title = useRef(null);
   return (
     <>
       {gridSize < 1 || (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <input
-              ref={title}
-              type="text"
-              placeholder="Enter title press Enter"
-            />
-          </div>
-        </form>
+        <div>
+          <input
+            type="text"
+            placeholder="Enter titler"
+            onChange={handleChange}
+          />
+        </div>
       )}
     </>
   );
