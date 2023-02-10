@@ -38,7 +38,7 @@ const WordInput = ({gridSize, addToWordList, wordList}) => {
 
             <span className="tooltiptext">
               Enter a single word or multiple words separated by spaces. Hit
-              Enter. To view enteries put your cursor over hte grid.
+              Enter. To view, move the mouse cursor over the puzzle grid.
             </span>
           </div>
         </form>
