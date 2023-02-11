@@ -83,6 +83,7 @@ export class LetterGrid {
         }
         return obj;
       };
+
       for (let i = 0; i < 1000; i++) {
         const vector = ["LH", "RH", "LUD", "LDD", "UV", "DV", "RUD", "RDD"];
         const result = {

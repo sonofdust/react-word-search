@@ -14,7 +14,6 @@ const EditPuzzle = () => {
       <section className="edit-container">
         <div className="grid-input">
           <GridSizeSelect />
-          <TitleInput />
           <WordInput />
           {!!wordList.length ? (
             <button onClick={removeAll}>Delete All</button>
