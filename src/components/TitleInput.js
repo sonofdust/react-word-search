@@ -2,7 +2,7 @@ import DataContext from "../context/DataContext";
 import {useContext} from "react";
 
 const TitleInput = () => {
-  const {editTitle, gridSize} = useContext(DataContext);
+  const {editTitle, gridSize, title} = useContext(DataContext);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -12,13 +12,14 @@ const TitleInput = () => {
   return (
     <>
       {gridSize < 1 || (
-        <div>
-          <input
-            type="text"
-            placeholder="Enter title hit <tab>"
-            onChange={handleChange}
-          />
-        </div>
+        <input
+          value={title}
+          size={35}
+          id="title-text"
+          type="text"
+          placeholder="Enter title"
+          onChange={handleChange}
+        />
       )}
     </>
   );

@@ -108,7 +108,7 @@ link {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: white;
+  background-color: black;
 }
 
 .grid-container .row {
@@ -248,3 +248,4 @@ a {color: white;
   padding-left: 25px;}
 
 .view-list {padding-top: 40px;}
+#title-text { text-align: center;  size: 100;}

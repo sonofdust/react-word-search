@@ -1,5 +1,6 @@
 import React from "react";
-import PuzzleGrid from "./PuzzleGrid";
+import Grid from "./Grid";
+import TitleInput from "./TitleInput";
 import GridSizeSelect from "./GridSizeSelect";
 import WordInput from "./WordInput";
 import WordList from "./WordList";
@@ -19,8 +20,10 @@ const EditPuzzle = () => {
           ) : null}
           <WordList />
         </div>
-
-        <PuzzleGrid />
+        <div className="grid-container">
+          <TitleInput />
+          <Grid />
+        </div>
       </section>
     </div>
   );
