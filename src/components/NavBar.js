@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <nav>
       <div className="heading">
-        <h4>Word Search</h4>
+        <h4>WORD SEARCH GENERATOR</h4>
       </div>
       <ul className="nav-links">
         <li>
